@@ -1,4 +1,4 @@
-# Building-a-simple-REST-API-with-Python-and-Flask
+# REST API with Python and Flask, with JWT auth
 
 [Building a simple REST API with Python and Flask](https://medium.com/@onejohi/building-a-simple-rest-api-with-python-and-flask-b404371dc699)
 
