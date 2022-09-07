@@ -1,2 +1,7 @@
 flask
 autopep8
+Flask-SQLAlchemy
+marshmallow-sqlalchemy
+flask_marshmallow
+marshmallow
+mysqlclient
