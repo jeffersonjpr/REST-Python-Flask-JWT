@@ -1,0 +1,18 @@
+_id: env_fa849fcddbfe778e220de877abb35bf52dd2a00f
+type: Environment
+parentId: wrk_0df319bd82e54c3d809b2b9f49c97a32
+modified: 1662431150576
+created: 1662431075635
+name: Base Environment
+data:
+  ip: 127.0.0.1
+  port: "5000"
+  base_url: http://{{ _.ip }}:{{ _.port }}/
+dataPropertyOrder:
+  "&":
+    - ip
+    - port
+    - base_url
+color: null
+isPrivate: false
+metaSortKey: 1662431075635
