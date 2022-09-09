@@ -85,3 +85,10 @@ def delete_user(id):
     except Exception as e:
         app.logger.error(e)
         return jsonify({'message': 'Something went wrong'}), 500
+
+
+def user_by_username(username):
+    try:
+        return Users.query.filter_by(username=username).first()
+    except:
+        return None
