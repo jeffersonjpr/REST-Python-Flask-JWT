@@ -4,8 +4,9 @@ from ..views import users, helper
 
 
 @app.route('/', methods=['GET'])
-def root():
-    return jsonify({'message': 'Hello, World!'})
+@helper.token_required
+def root(current_user):
+    return jsonify({'message': 'Hello, World!', 'user': current_user.username})
 
 
 @app.route('/users', methods=['POST'])
@@ -22,8 +23,8 @@ def get_users():
 def update_user(id):
     return users.update_user(id)
 
-
 @app.route('/users/<id>', methods=['GET'])
+@helper.token_required
 def get_user(id):
     return users.get_user(id)
 

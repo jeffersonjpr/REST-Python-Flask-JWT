@@ -22,3 +22,19 @@ def auth():
         return jsonify({'message':'Validated successfully','token': token})
 
     return jsonify({'message': 'Could not verify', 'WWW-Authenticate': 'Basic realm="Login required!"'}), 401
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.args.get('token')
+        app.logger.debug('token: %s', token)
+        if not token:
+            return jsonify({'message': 'Token is missing!'}), 403
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+            current_user = user_by_username(data['username'])
+        except Exception as e:
+            app.logger.debug(e)
+            return jsonify({'message': 'Token is invalid!'}), 403
+        return f(current_user, *args, **kwargs)
+    return decorated
