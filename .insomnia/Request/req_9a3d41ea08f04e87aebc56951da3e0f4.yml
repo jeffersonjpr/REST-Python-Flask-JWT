@@ -1,28 +1,28 @@
-_id: req_6f07b2e5f8cb410ea3cb80c30f22fdd9
+_id: req_9a3d41ea08f04e87aebc56951da3e0f4
 type: Request
 parentId: fld_20f8f2779c984acf903d3182a519ead0
-modified: 1662749338896
-created: 1662604558454
-url: "{{ _.base_url }}users"
-name: Create user
+modified: 1662682421200
+created: 1662681757808
+url: "{{ _.base_url }}users/1"
+name: Update user
 description: ""
-method: POST
+method: PUT
 body:
   mimeType: application/json
   text: |-
     {
-      "username": "jef232in2",
+      "username": "jefin322",
       "password": "1234",
       "name": "Jefferson",
-      "email": "jefferw1s32on@email.com"
+      "email": "jefferso232n2@email.com"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
-    id: pair_df326cc6d0234d888563dd8db315316e
+    id: pair_ce974e7cbd0a47c5a1a92182d0a5d82c
 authentication: {}
-metaSortKey: -1662604558454
+metaSortKey: -1662681757808
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
