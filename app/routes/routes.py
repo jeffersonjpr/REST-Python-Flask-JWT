@@ -28,6 +28,16 @@ def update_user(id):
 def get_user(id):
     return users.get_user(id)
 
+@app.route('/users/<username>', methods=['GET'])
+@helper.token_required
+def get_user_by_username(username):
+    return users.get_user(username)
+
+@app.route('/users/<name>', methods=['GET'])
+@helper.token_required
+def get_user_by_name(name):
+    return users.get_user(name)
+
 
 @app.route('/users/<id>', methods=['DELETE'])
 def delete_user(id):
